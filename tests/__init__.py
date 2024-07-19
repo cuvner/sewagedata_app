@@ -3,10 +3,18 @@ import pandas as pd
 import json
 import plotly.graph_objects as go
 import numpy as np
+import requests
 
-# Load the JSON data
-with open("js_map.json") as f:
-    data = json.load(f)
+# URL to the JSON file in your GitHub repository
+url = 'https://raw.githubusercontent.com/cuvner/sewagedata_app/blob/main/tests/js_map.json
+
+# Fetch the JSON data from GitHub
+response = requests.get(url)
+if response.status_code != 200:
+    st.error("Failed to fetch the JSON file from GitHub."
+    st.stop()
+
+data = response.json()
 
 # Extract relevant data
 outflows = data["outflows"]
@@ -20,7 +28,7 @@ df["lon"] = pd.to_numeric(df["lon"], errors='coerce')
 df["spillCount"] = pd.to_numeric(df["spillCount"], errors='coerce').fillna(1)
 
 # Normalize spillCount to a specific range for the cone sizes
-min_size, max_size = 20, 40
+min_size, max_size = 1, 20
 df["scaled_spillCount"] = np.interp(df["spillCount"], (df["spillCount"].min(), df["spillCount"].max()), (min_size, max_size))
 
 # Streamlit app
