@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "sewagedata-webapp"
+version = "0.1.0"
+description = ""
+authors = ["cuvner <chriscourage699@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.36.0"
+trimesh = "^4.4.3"
+numpy = "^2.0.0"
+matplotlib = "^3.9.1"
+pandas = "^2.2.2"
+plotly = "^5.22.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
