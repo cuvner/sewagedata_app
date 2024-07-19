@@ -11,7 +11,7 @@ url = 'https://raw.githubusercontent.com/cuvner/sewagedata_app/blob/main/tests/j
 # Fetch the JSON data from GitHub
 response = requests.get(url)
 if response.status_code != 200:
-    st.error("Failed to fetch the JSON file from GitHub."
+    st.error("Failed to fetch the JSON file from GitHub.")
     st.stop()
 
 data = response.json()
