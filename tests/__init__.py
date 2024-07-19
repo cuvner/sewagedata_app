@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 # Load the JSON data
-with open("../data/js_map.json") as f:
+with open("js_map.json") as f:
     data = json.load(f)
 
 # Extract relevant data
