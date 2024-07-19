@@ -6,7 +6,8 @@ import numpy as np
 import requests
 
 # URL to the JSON file in your GitHub repository
-url = 'https://raw.githubusercontent.com/cuvner/sewagedata_app/blob/main/tests/js_map.json
+url = 'https://raw.githubusercontent.com/cuvner/sewagedata_app/main/tests/js_map.json'
+
 
 # Fetch the JSON data from GitHub
 response = requests.get(url)
